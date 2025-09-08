@@ -1,2 +1,3 @@
 # php2025
-Ejemplos y ejercicios de Programación en entorno Servidor
+Ejemplos y ejercicios de módulo de  Programación en Entorno Servidor
+-- 
