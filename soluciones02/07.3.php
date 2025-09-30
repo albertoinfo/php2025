@@ -1,5 +1,5 @@
 <?php
-define('INCREMENTOCOLOR', 3);
+define('INCREMENTOCOLOR', 1);
 define ('SIZE',10);
 // Color inicial 
 $rojo  = random_int(0, 255);
