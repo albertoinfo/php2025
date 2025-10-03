@@ -16,7 +16,7 @@
 					<tr>
 						<td>Contraseña:</td>
 						<td><input type="password" name="clave" size="20"
-						value= "<?= isset($nombre)?$nombre:'' ?>"></td>
+						value= "<?= isset($clave)?$clave:'' ?>"></td>
 						</td>
 					</tr>
 				</table>

@@ -69,9 +69,9 @@
  $repetido = valorRepetido($numeros);
 
  // Usando la librería
- //$maximo = max($numeros);
- //$minimo = min($numeros);
- //$repetido = valorRepetido2($numeros);
+ $maximo = max($numeros);
+ $minimo = min($numeros);
+ $repetido = valorRepetido2($numeros);
   ?>  
 <html>
 <head>

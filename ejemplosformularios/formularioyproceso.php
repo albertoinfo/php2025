@@ -8,12 +8,6 @@ $usuario = "";
 
 // SI es POST PROCESO 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $tusuarios = [
-        'pepe' => '1234',
-        "luis" => "siul",
-        "admin" => "admin"
-    ];
-
     $msg = "";
 
 

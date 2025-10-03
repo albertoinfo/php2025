@@ -14,6 +14,7 @@ Estos son tu datos:
 Modo de juego :$_REQUEST[modo]<br>
 Nivel de juego : $_REQUEST[nivel]<br>
 Su color es: <b> <span style='color:$_REQUEST[tucolor]'> COLOR </span></b> <br>
+$_REQUEST[tucolor]
 <hr>
 FIN;
 
