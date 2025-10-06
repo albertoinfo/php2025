@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Acceso Moderno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos generales y del cuerpo de la página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Contenedor principal del formulario */
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        /* Título del formulario */
+        .form-container h2 {
+            margin-bottom: 30px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Grupo de cada campo de entrada (icono + input) */
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        /* Iconos dentro de los campos de entrada */
+        .input-group .icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        /* Campos de entrada (nombre y clave) */
+        .form-input {
+            width: 100%;
+            padding: 12px 15px 12px 50px; /* Espacio para el icono */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto de foco en los campos de entrada */
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        /* Cambio de color del icono al enfocar el campo */
+        .form-input:focus + .icon {
+            color: #667eea;
+        }
+
+        /* Botón de envío */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #667eea;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Efecto hover del botón */
+        .submit-btn:hover {
+            background-color: #5a6edc;
+            transform: translateY(-2px);
+        }
+
+        /* Enlaces adicionales (ej. "¿Olvidaste tu contraseña?") */
+        .form-links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .form-links a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .form-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media queries para la responsividad en dispositivos pequeños */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="01.php" method="get">
+            <div class="input-group">
+                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Nombre de usuario" >
+                <i class="fas fa-user icon"></i>
+            </div>
+            <div class="input-group">
+                <input type="password" id="clave" name="clave" class="form-input" placeholder="Clave" >
+                <i class="fas fa-lock icon"></i>
+            </div>
+            <button type="submit" class="submit-btn">Acceder</button>
+        </form>
+    </div>
+
+</body>
+</html>
