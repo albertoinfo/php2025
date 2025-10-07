@@ -12,38 +12,14 @@
 
 function operar($val1,$val2,$operacion):float {
    
-    switch ($operacion) {
-        case '+':
-            $resultado = $val1 + $val2;
-            break;
-        case '-':
-            $resultado = $val1 - $val2;
-            break;
-        case  '*':
-            $resultado = $val1 * $val2;
-            break;
-        case '/':
-            $resultado = $val1 / $val2;              
-            break;
-    }
+     $resultado = 0.0;
     return $resultado;
 }
 
 function imprimirConFormato($formato,$valor)
 {
-    switch ($formato) {
-        case "dec":
-            $valorf = $valor;
-            break;
-        case "hex":
-            $valorf = dechex($valor);
-            break;
-        case "bin":
-            $valorf = decbin($valor);
-            break;
-        default:  $valorf = $valor;
-    }
-    return $valorf;
+  
+    return " ";
 }
 
 // Si fuera por POST podia chequear $_SERVER['REQUEST_METHOD'] == 'POST'
@@ -53,22 +29,7 @@ if (isset($_GET["operacion"])) {
     $num2 = $_REQUEST['num2'];
     $operacion = $_REQUEST['operacion'];
     $formato = $_REQUEST['formato'];
-    
-    $error =false;
-    if ( ! is_numeric ( $num1 ) || !is_numeric ( $num2 ) ){
-        $error = true;
-        $msg = " Error: los valores introducidos no son numéricos.";
-    }
-    
-    if (($num2 == 0) && ($operacion == '/')) {
-        $error = true;
-        $msg = " Error: División por cero";
-    }
-    
-    if ( !$error ) {
-        $resultado = operar($num1,$num2,$operacion);
-        $msg = "El resultado es ". imprimirConFormato($formato,$resultado);
-    }
+    $msg = "";
     
 }
 require_once ("02vista.php");
