@@ -80,14 +80,11 @@ Idiomas: <?php
      }
 
  ?> <br />
-Año de fin de estudios: <?php echo $anioFinEstudios; ?> <br />
+Año de fin de estudios: <?= $anioFinEstudios; ?> <br />
 Lista de los códigos postales de provincias: <?php echo $codigosPostales; ?> <br />
 Comentarios: <?php echo $comentarios; ?> <br />
 
 		</div>
 	</div>
-<hr>
-<?php show_source(__FILE__); ?>
-<hr>
 </body>
 </html>
