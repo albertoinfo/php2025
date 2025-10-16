@@ -1,22 +1,3 @@
-<?php
-/**
- * Calcula el número de casilla a pintas tanto en blanco como con datos
- * Por ejemplo: febrero puede necesitar solo 4 semanas x7-> 28 casillas si el lunes es dia 1.
- * En un mes de 31 días si el 1 es domingo se necesitan 6 x7 --> 42
- * @param int $primerdia
- * @param int $numerodias
- * @return int número de casillas necesarias ( Divibles entre 7)
- */
-function calcularCasillas($primerdia, $numerodias)
-{
-	$total = $primerdia - 1 + $numerodias;
-	if ($total == 28) return 28;
-	if ($total <= 35) return 35;
-	else return 42;
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -154,3 +135,21 @@ function calcularCasillas($primerdia, $numerodias)
 </body>
 
 </html>
+<?php
+/**
+ * Calcula el número de casilla a pintas tanto en blanco como con datos
+ * Por ejemplo: febrero puede necesitar solo 4 semanas x7-> 28 casillas si el lunes es dia 1.
+ * En un mes de 31 días si el 1 es domingo se necesitan 6 x7 --> 42
+ * @param int $primerdia
+ * @param int $numerodias
+ * @return int número de casillas necesarias ( Divibles entre 7)
+ */
+function calcularCasillas($primerdia, $numerodias)
+{
+	$total = $primerdia - 1 + $numerodias;
+	if ($total == 28) return 28;
+	if ($total <= 35) return 35;
+	else return 42;
+}
+
+?>

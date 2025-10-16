@@ -1,13 +1,10 @@
 <?php
-/**
- * Calcula la letra de control asociado a un nif
- * @param int $digitos
- * @return string
- */
 function calculaNIF(int $digitos): String
 	{
 
-		return " ";
+		$letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+		$resultado = $letras[$digitos % 23];
+		return $resultado;
 	}
 
 ?>
@@ -19,18 +16,27 @@ function calculaNIF(int $digitos): String
 </head>
 
 <body>
+	<?php
 	
-	<?php if  ($_SERVER['REQUEST_METHOD'] == "GET" ) : ?>
-	
+
+	if ($_SERVER['REQUEST_METHOD'] == "GET") {
+	?>
 		<form method='POST'>
 			<p>DNI: <input type='text' name='dni'></p>
 			<input type='submit' value='Enviar' />
 		</form>
-	<?php else :?>
-		<?php // Proceso el formulario ?>
-		
-	<?php endif ?>
-	
+	<?php
+	} else {
+		if (!empty($_POST["dni"]) && ctype_digit($_POST["dni"]) ) {
+			$numdni   = $_POST["dni"];
+			$letradni = calculaNIF($numdni);
+			echo "La letra del DNI es: $letradni <br>";
+			echo "Su NIF completo sería: $numdni-$letradni";	
+		} else {
+			echo "El valor del DNI:".htmlspecialchars($_POST["dni"])."</b> no es valor numérico";
+		}
+	}
+	?>
 </body>
 
 </html>
