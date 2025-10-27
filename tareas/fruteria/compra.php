@@ -12,7 +12,7 @@
     </div>
     <div class="mensaje-principal">REALICE SU COMPRA, <?= htmlspecialchars($_SESSION['cliente']) ?></div>
     
-    <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
+    <form  method="post">
         <label for="fruta">Selecciona la fruta:</label>
         <select name="fruta" id="fruta">
 			<option value="Platanos">Plátanos 🍌</option>

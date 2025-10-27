@@ -14,7 +14,7 @@
     
     <div class="mensaje-principal">¡Muchas gracias por su pedido! Vuelva pronto 💚</div>
     
-    <input type="button" value=" NUEVO CLIENTE " onclick="location.href='<?=$_SERVER['PHP_SELF'];?>'">
+    <input type="button" value=" NUEVO CLIENTE " onclick="location.href='<?=$_SERVER['PHP_SELF'];?>'" >
 </div>
 </body>
 </html>

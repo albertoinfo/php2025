@@ -92,3 +92,19 @@ input[name="accion"][value=" Terminar "]:hover, input[name="accion"][value=" Anu
     border-radius: 5px;
     text-align: left;
 }
+
+table, th, td {
+    border: 2px solid black;
+    margin: 10px;
+    
+  }
+  
+  /* Esto unirá todos los bordes de las celdas en una sola línea */
+  table {
+    border-collapse: collapse;
+  }
+  
+  /* Opcional: agrega espaciado si no quieres que los bordes estén pegados */
+  table {
+    border-spacing: 5px; /* Solo funciona con border-collapse: separate; */
+  }
