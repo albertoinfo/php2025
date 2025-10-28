@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <link href="estilo.css" rel="stylesheet" type="text/css" />
 <title>LA FRUTERIA - Despedida</title>
+
+
 </head>
 <body>
-<H1> La Frutería del siglo XXI</H1>
+<H1>🍊🍊 La Frutería del siglo XXI 🍎🍎</H1> 
+
 <div class="container">
     <div class="compra-detalle">
         <?= $compraRealizada ?>

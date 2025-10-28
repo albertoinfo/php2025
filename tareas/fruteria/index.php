@@ -1,4 +1,5 @@
 <?php
+// Maneja una lista de precios almacenada en el array precios
 require_once "precios.php";
 session_start();
 
@@ -48,7 +49,7 @@ if (isset($_POST["accion"])) {
     }
 }
 
-$compraRealizada = htmlTablaPedidos();
+$compraRealizada = htmlTablaPedidosImportes($precios);
 require_once 'compra.php';
 
 

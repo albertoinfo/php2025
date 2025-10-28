@@ -6,7 +6,9 @@
 <title>LA FRUTERIA</title>
 </head>
 <body>
-<H1> La Frutería del siglo XXI</H1>
+
+<H1>🍊🍊 La Frutería del siglo XXI 🍎🍎</H1> 
+
 <div class="container">
     <div class="mensaje-principal">BIENVENIDO A NUESTRA FRUTERÍA</div>
     <form  method="get">
