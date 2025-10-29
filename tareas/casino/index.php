@@ -5,8 +5,7 @@ $visitas = 1;
 if ( isset( $_COOKIE['visitascasino'])){
     $visitas = $_COOKIE['visitascasino'];
 }
-$visitas++;
-setcookie("visitascasino",$visitasrealizadas, time()+ 30 * 24 * 3600); // Un mes  
+ // Un mes  
 
 $msg="";
 
@@ -34,6 +33,8 @@ if (isset($_POST["apostar"])) {
 
 // Si abandona o ya no le queda dinero -------------------------
  if (isset($_POST["dejar"]) || ($_SESSION["disponible"] == 0) ) {
+    $visitas++;
+    setcookie("visitascasino",$visitas, time()+ 30 * 24 * 3600); 
    require_once "despedida.php";
    session_destroy();
    exit();
