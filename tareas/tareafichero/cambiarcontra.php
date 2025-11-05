@@ -68,8 +68,8 @@
 <body>
 
     <form  method="post">
-        <h2>Cambiar Contraseña</h2>
-
+        <h2>Cambiar Contraseña del usuario PEPITO</h2>
+        <?= ($mensaje)??"" ?>
         <div>
             <label for="current-password">Contraseña Actual:</label>
             <input type="password" id="current-password" name="current_password" required>

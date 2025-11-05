@@ -72,7 +72,7 @@
 
     <form  method="post">
         <h2>Acceso</h2>
-
+        <?= ($mensaje)??"" ?>
         <div>
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
