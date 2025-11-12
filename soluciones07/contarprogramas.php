@@ -1,14 +1,5 @@
 <?php
 
-// Devuelve true, si la cadena termina en final
-function endsWith($cadena, $final)
-{
-    $length = strlen($final);
-    return $length > 0 ? substr($cadena, -$length) === $final : true;
-}
-
-
-
 /*
  * Devuelve un array [nombre de ficheros php , nºlineas ]
  */
@@ -17,8 +8,8 @@ function analizaDir($dir): array
     $resu = [];
     if ($dh = opendir($dir)) {
         while (($fichero = readdir($dh)) !== false) {
-            
-            if (endsWith($fichero, ".php")) {
+         
+            if (str_ends_with($fichero, ".php")) {
                 // Obtengo un array del fichero y cuento las líneas
                 $nombreyruta = $dir . "/" . $fichero;
                 $arrayfile = @file($nombreyruta);
