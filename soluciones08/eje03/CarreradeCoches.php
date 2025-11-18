@@ -2,16 +2,16 @@
 
 include_once "Coche.php";
 
-const META = 500;         // 500 kilómetros
+const META = 5500;         // 500 kilómetros
 
 $parrilla= [];            // Array de coches
 
 // Creo 5 coches
-$parrilla [0] = new Coche ("Ferrari",300);
-$parrilla [1] = new Coche ("600",100);
-$parrilla [2] = new Coche ("BMW",220);
-$parrilla [3] = new Coche ("Seat",150);
-$parrilla [4] = new Coche ("La Cabra",10);
+$parrilla [] = new Coche ("Ferrari",300);
+$parrilla [] = new Coche ("600",100);
+$parrilla [] = new Coche ("BMW",220);
+$parrilla [] = new Coche ("Seat",150);
+$parrilla [] = new Coche ("La Cabra",10);
 
 // Test de pruebas todos deben generar errores
 
@@ -23,8 +23,8 @@ $c1->parar();
 $c2->recorre();
 
 // Arranquen los motores
-for ($i=0; $i< count($parrilla); $i++){
-    $parrilla[$i]->arrancar();
+foreach ($parrilla as $coche){
+    $coche->arrancar();
 }
 
 // Comienza la carrera !!!!
@@ -62,6 +62,10 @@ function alcanzarMeta ( array $tcoches, int $distancia):bool{
        }
    }
    return $fin;
+}
+
+function ordena($a, $b) {
+    return $a->getKilometros() - $b->getKilometros();
 }
 
 // Ordeno la tabla de objetos por los kilometros recorridos
