@@ -6,7 +6,7 @@ require_once "app/modelo/AccesoDatos.php";
 /* CONTROL DE ACCESO A UNA APLICACIÓN
  *  - Valida contra la base de datos
  *  - Cierra la sesión pasado 60 segundo sin volver a acceder
- *  - Bloquea el acceso tras más de tres fallos consecutivos del mismo usuario
+ *  - Bloquea el acceso tras más de tres fallos consecutivos del mismo usuario y navegador:
  */
 
 session_start();
@@ -18,14 +18,13 @@ if (isset($_SESSION['timeout'])) {
     // Si han pasado 60 sg cierra la sesión
     if (($horaActual - $_SESSION['timeout']) > 60) {
         $db = AccesoDatos::getModelo();
-        $db->AnotarSalida($_SESSION['login']);
         session_destroy();
         header("refresh:0");
         exit();
     }
 }
 
-// PROCESO FORMULARIO  ORDEM  SALIR
+// PROCESO FORMULARIO  ORDEN  SALIR
 
 if (isset($_REQUEST['orden']) and $_REQUEST['orden'] == "Salir") {
     session_destroy();
@@ -45,7 +44,7 @@ if (isset($_SESSION['Nombre'])) {
     // Por ejemplo se carga una vista con los datos de la tabla Productos
     $db = AccesoDatos::getModelo();
     $tproductos = $db->getProductos();
-    include_once 'app/vistas/vistaapp_pro.php';
+    include_once 'app/vistas/listado.php';
     exit();
 }
 
@@ -93,4 +92,4 @@ if (isset($_REQUEST['orden']) and $_REQUEST['orden'] == "Entrar") {
     }
 }
 
-include_once 'app/vistas/vistaloginapp.php';
+include_once 'app/vistas/login.php';

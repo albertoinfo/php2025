@@ -13,7 +13,7 @@ class AccesoDatos {
     private $stmt_incaccesos  = null;
     private $stmt_bloquear   = null;
     private $stmt_productos   = null;
-    private $stmt_anotarSalidaTimeOut = null;
+    
    
     
     public static function getModelo(){
@@ -44,8 +44,7 @@ class AccesoDatos {
             $this->stmt_incaccesos  = $this->dbh->prepare("update Users set accesos=accesos+1 where login=:login");
             $this->stmt_bloquear    = $this->dbh->prepare("update Users set bloqueo=1 where login=:login");
             $this->stmt_productos   = $this->dbh->prepare("select * from Productos");
-            $this->stmt_anotarSalidaTimeOut = $this->dbh->prepare("update Users set salidatimeout=salidatimeout+1 where login=:login");
-
+       
         } catch (PDOException $e){
             echo " Error al crear la sentencia ".$e->getMessage();
             exit();
@@ -101,13 +100,7 @@ class AccesoDatos {
         $resu = ($this->stmt_bloquear->rowCount () == 1);
         return $resu;
     }
-    
-    public function AnotarSalida($login):bool {
-        $this->stmt_anotarSalidaTimeOut->bindValue(":login",$login);
-        $this->stmt_anotarSalidaTimeOut->execute();
-        $resu = ($this->stmt_anotarSalidaTimeOut->rowCount () == 1);
-        return $resu;
-    }
+
 
 
 

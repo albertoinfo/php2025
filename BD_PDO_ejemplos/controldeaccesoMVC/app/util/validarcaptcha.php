@@ -17,12 +17,12 @@ if (!empty($response)) {
     } else {
         //Google ha detectado que se trata de un proceso no humano
         $mensaje = " Intento no humano ";
-        include_once "app/vistas/vistaloginapp.php";
+        include_once "app/vistas/login.php";
         exit();
     }
 } else {
     $mensaje = " Debes pulsar el captcha para poder acceder ";
     $activarcaptcha = true;
-    include_once "app/vistas/vistaloginapp.php";
+    include_once "app/vistas/login.php";
     exit();
 }

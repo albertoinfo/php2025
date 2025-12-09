@@ -44,7 +44,7 @@ if (isset($_SESSION['Nombre'])) {
     // Por ejemplo se carga una vista con los datos de la tabla Productos
     $db = AccesoDatos::getModelo();
     $tproductos = $db->getProductos();
-    include_once 'app/vistas/vistaapp_pro.php';
+    include_once 'app/vistas/listado.php';
     exit();
 }
 
@@ -83,4 +83,4 @@ if (isset($_REQUEST['orden']) and $_REQUEST['orden'] == "Entrar") {
         }
     
 
-include_once 'app/vistas/vistaloginapp.php';
+include_once 'app/vistas/login.php';
