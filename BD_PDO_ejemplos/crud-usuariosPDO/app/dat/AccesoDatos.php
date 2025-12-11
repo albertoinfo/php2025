@@ -1,6 +1,6 @@
 <?php
-include_once "Usuario.php";
-include_once "config.php";
+include_once "app/dat/Usuario.php";
+include_once "app/config.php";
 
 /*
  * Acceso a datos con BD Usuarios y Patrón Singleton 

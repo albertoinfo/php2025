@@ -1,6 +1,6 @@
 <?php
-include_once "Usuario.php";
-include_once 'AccesoDatos.php';
+require_once "app/dat/Usuario.php";
+require_once 'app/dat/AccesoDatos.php';
 
 function accionBorrar ($login){    
     $db = AccesoDatos::getModelo();
