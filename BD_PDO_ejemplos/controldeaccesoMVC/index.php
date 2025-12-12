@@ -17,7 +17,6 @@ if (isset($_SESSION['timeout'])) {
     $horaActual = time();
     // Si han pasado 60 sg cierra la sesión
     if (($horaActual - $_SESSION['timeout']) > 60) {
-        $db = AccesoDatos::getModelo();
         session_destroy();
         header("refresh:0");
         exit();
@@ -65,7 +64,6 @@ if (isset($_REQUEST['orden']) and $_REQUEST['orden'] == "Entrar") {
             if ($user->bloqueo == 0) {
                 // ACCESO CORRECTO 
                 $_SESSION['Nombre'] = $user->Nombre;
-                $_SESSION['login'] = $user->login;
                 $_SESSION['accesos'] = $user->accesos;
                 $db->incrementarAccesos($user->login);
                 // SE CARGA LA PÁGINA CON USUARIO IDENTIFICADO
