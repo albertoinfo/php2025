@@ -1,5 +1,5 @@
 <?php
-
+//-------------------------------
 // Caracteres asociadas a las logos 
 // PIEDRA (Puño derecho)
 // PIEDRA2 (Puño Izquierdo / jugador 2 ) 
